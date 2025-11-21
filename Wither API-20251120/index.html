@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="home-desktop">
+      <div class="bg-weather" role="img" aria-label="Weather background image">
+        <img class="img" src="photo/Сильный снег.jpg" alt="Weather background" />
+      </div>
+      <div class="bg-blur" aria-hidden="true"></div>
+      
+      <section class="main-weather-display">
+        <div class="temperature-display">
+          <span class="text-wrapper" id="currentTemp">16°</span>
+        </div>
+        <div class="group">
+          <h1 class="text-wrapper-2" id="cityName">London</h1>
+          <time class="p" id="currentDate" datetime="2023-09-09T06:09">06:09 - Monday, 9 Sep '23</time>
+        </div>
+        <div class="element-cloudy" role="img" aria-label="Weather icon">
+          <span id="weatherEmoji" style="font-size: 80px;">⛅</span>
+        </div>
+      </section>
+      
+      <aside class="sidebar">
+        <form class="search-form" role="search" aria-label="Search location" id="searchForm">
+          <label for="location-search" class="visually-hidden">Search Location</label>
+          <input
+            type="search"
+            id="location-search"
+            class="search-input"
+            placeholder="Search Location..."
+            aria-label="Search Location"
+            value="Bishkek"
+          />
+          <button type="submit" class="search-button" aria-label="Search">
+            <span class="group-2" aria-hidden="true">🔍</span>
+          </button>
+        </form>
+        
+        <section class="weather-details-section">
+          <h2 class="text-wrapper-4">Weather Details...</h2>
+          <div class="frame">
+            <p class="thunderstorm-with" id="weatherDescription">THUNDERSTORM WITH LIGHT DRIZZLE</p>
+            <div class="weather-detail-item group-4">
+              <div class="group-5">
+                <span class="text-wrapper-9">Temp max</span>
+                <span class="text-wrapper-10" id="tempMax">19°</span>
+              </div>
+              <img class="vector" src="img/vector.svg" alt="Temperature max icon" />
+            </div>
+            <div class="weather-detail-item group-4">
+              <div class="group-5">
+                <span class="text-wrapper-9">Temp min</span>
+                <span class="text-wrapper-10" id="tempMin">15°</span>
+              </div>
+              <img class="vector" src="img/vector-2.svg" alt="Temperature min icon" />
+            </div>
+            <div class="weather-detail-item group-6">
+              <div class="weather-icon">💧</div>
+              <div class="group-7">
+                <span class="text-wrapper-11">Humidity</span>
+                <span class="text-wrapper-12" id="humidity">58%</span>
+              </div>
+            </div>
+            <div class="weather-detail-item group-8">
+              <div class="weather-icon">☁️</div>
+              <div class="group-9">
+                <span class="text-wrapper-13">Cloudy</span>
+                <span class="text-wrapper-12" id="cloudiness">86%</span>
+              </div>
+            </div>
+            <div class="weather-detail-item group-10">
+              <div class="weather-icon">💨</div>
+              <div class="group-11">
+                <span class="text-wrapper-14">Wind</span>
+                <span class="text-wrapper-15" id="windSpeed">5km/h</span>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        <section class="forecast-section">
+          <h2 class="text-wrapper-5">Today's Weather Forecast...</h2>
+          <div class="forecast-container" id="forecastContainer">
+            <!-- Forecast items will be dynamically added here -->
+          </div>
+        </section>
+      </aside>
+      
+      <div id="loader" class="loader hidden">Loading...</div>
+      <div id="error" class="error hidden"></div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
